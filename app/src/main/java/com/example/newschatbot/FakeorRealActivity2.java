@@ -1,5 +1,6 @@
 package com.example.newschatbot;
 
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.util.Log;
@@ -152,5 +153,12 @@ public class FakeorRealActivity2 extends AppCompatActivity {
     private MappedByteBuffer loadModelFile() throws IOException {
         AssetFileDescriptor openFd = getAssets().openFd("model_whatsapp_fakenews_500.tflite");
         return new FileInputStream(openFd.getFileDescriptor()).getChannel().map(MapMode.READ_ONLY, openFd.getStartOffset(), openFd.getDeclaredLength());
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), Chat.class);
+        startActivity(intent);
+        finish();
+
     }
 }
