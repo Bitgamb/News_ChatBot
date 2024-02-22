@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:lottie_rawRes="@raw/login_page"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:src="@drawable/news" />-->
+
+    <TextView
+        style="@style/viewParent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Login"
+        android:fontFamily="@font/montserrat_black"
+        android:textColor="@color/blackTextColor"
+        android:textSize="@dimen/headerTextSize"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="12dp"
+            android:background="@drawable/edt_background"
+            android:drawableLeft="@drawable/user_clip"
+            android:hint="@string/email"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/LoginActivityEmailError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edt_background"
+            android:drawablePadding="12dp"
+            android:drawableLeft="@drawable/lock_clip"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/passwordsyntax"
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Forgot Password?"
+    android:textStyle="bold"
+    android:gravity="right"
+    android:id="@+id/forgotpass"
+    android:textColor="@color/chat_color_sender"></TextView>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"></ProgressBar>
+
+    <ImageView
+        android:id="@+id/btn_login"
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_login_button" />
+
+    <ImageView
+        android:id="@+id/registernow"
+        android:clickable="true"
+
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/button_register" />
+    <!--<TextView
+        android:id="@+id/registernow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't Have an Account?\nRegister Now."
+        android:textAlignment="center"
+        android:textColor="@color/blackTextColor"
+        android:textSize="15sp"
+        android:textStyle="bold" />-->
+
+    <ImageView
+        android:id="@+id/otp_btn"
+        android:clickable="true"
+
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/button_otp" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="50dp"
+
+
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:src="@drawable/news_peeps"
+            android:layout_alignParentBottom = "true"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NewsChatBot" parent="Theme.Material3.Dark.NoActionBar">
+
+        <!-- Customize your light theme here. -->
+
+    </style>
+
+    <style name="Theme.NewsChatBot" parent="Base.Theme.NewsChatBot" />
+
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+    
+    <style name="NoActionBarAndStatusBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+
+
+    </style>
+</resources>

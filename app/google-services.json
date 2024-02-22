@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "732604423618",
+    "project_id": "news-chatbot-15410",
+    "storage_bucket": "news-chatbot-15410.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732604423618:android:c3ecd3f5ffef6dfdeeca5b",
+        "android_client_info": {
+          "package_name": "com.example.newschatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732604423618-n2k7tgih3cbmoqpmfskn8b80hf0limi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newschatbot",
+            "certificate_hash": "157e084585c8c0cd2a66ee78e2434729c53ed823"
+          }
+        },
+        {
+          "client_id": "732604423618-hl8qp1jv4ec7ev8ughbn1269jh7hgoge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeE3LMGNmwaIpWxbwQYb8gVnlnUd557Hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732604423618-hl8qp1jv4ec7ev8ughbn1269jh7hgoge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

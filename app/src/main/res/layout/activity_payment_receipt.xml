@@ -1,0 +1,117 @@
+<LinearLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:id="@+id/receiptSuccess">
+    <FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:color/white"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp"
+
+        app:cardElevation="20dp">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+           >
+
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:src="@drawable/green_tick"
+                 />
+
+            <TextView
+                android:id="@+id/order_id_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Payment Success!"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="INR 100"
+
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:textColor="@color/white"
+                android:id="@+id/email_text_view"
+
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                android:textColor="@color/white"
+                android:id="@+id/uid_text_view"
+
+                android:textSize="14sp" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+
+                android:id="@+id/name_text_view"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:text="Payment Method: Razorpay"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/btnSaveReceipt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Receipt as Image"
+
+                android:backgroundTint="@color/gpt_bg_color"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
+</LinearLayout>

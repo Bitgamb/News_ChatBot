@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF000000</color>
+    <color name="colorAccent">#FFFFFFFF</color>
+    <color name="blackTextColor">#000</color>
+    <color name="colorLoginPrimaryDark">#FDFFFF</color>
+    <color name="my_primary">#FF5964</color>
+    <color name="my_secondary">#FFE74C</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="off_white">#FAFAFA</color>
+    <color name="light_gray">#C3C3C3</color>
+
+    <color name="chat_color_sender">#1E88E5</color>
+    <color name="chat_color_receiver">#7CB342</color>
+    <color name="purple">#550DD5</color>
+    <color name="dark_blue">#2037B6</color>
+    <color name="red">#FF0000</color>
+    <color name="uiBlue">#181D3D</color>
+    <color name="ttn_bg_color">#393C40</color>
+    <color name="gpt_bg_color">#0EA47E</color>
+    <color name="gray">#2d2d2d</color>
+    <color name="grey">#2d2d2d</color>
+</resources>
