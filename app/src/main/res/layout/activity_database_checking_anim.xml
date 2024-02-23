@@ -12,35 +12,33 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:foregroundGravity="center"
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+
         android:paddingTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/database"
-        app:lottie_repeatCount="3" />
+        app:lottie_repeatCount="3"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="69dp"
+        android:layout_height="78dp"
 
-        android:layout_marginStart="155dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="329dp"
+        android:layout_marginStart="140dp"
+
+        android:layout_marginTop="182dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="340dp"
         android:src="@drawable/newscb"
         app:layout_constraintBottom_toBottomOf="@+id/lottieAnimationView"
         app:layout_constraintEnd_toEndOf="@+id/lottieAnimationView"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
-        app:layout_constraintTop_toTopOf="@+id/lottieAnimationView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/lottieAnimationView" />
 
     <TextView
         android:id="@+id/textView"
