@@ -2,16 +2,20 @@ package com.example.newschatbot;
 
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.airbnb.lottie.LottieDrawable;
 
 import org.tensorflow.lite.Interpreter;
 
@@ -51,6 +55,8 @@ public class FakeorRealActivity2 extends AppCompatActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView((int) R.layout.activity_fakeor_real2);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         this.newstext = (EditText) findViewById(R.id.editTextTextMultiLine);
         this.detect = (ImageView) findViewById(R.id.imageButton_detect);
         this.detecttext = (TextView) findViewById(R.id.textView_detect);
@@ -70,9 +76,15 @@ public class FakeorRealActivity2 extends AppCompatActivity {
                     fakeorRealActivity2.stringToPython = fakeorRealActivity2.newstext.getText().toString();
                     fakeorRealActivity2 = FakeorRealActivity2.this;
                     if (((double) fakeorRealActivity2.doInference(fakeorRealActivity2.stringToPython)) > 0.5d) {
-                        FakeorRealActivity2.this.whatsapp.setImageResource(R.drawable.fake);
+                        //fake news
+                        Intent intent = new Intent(getApplicationContext(), DatabaseCheckingAnimFake.class);
+                        startActivity(intent);
+                        finish();
                     } else {
-                        FakeorRealActivity2.this.whatsapp.setImageResource(R.drawable.real);
+                        //real news
+                        Intent intent = new Intent(getApplicationContext(), DatabaseCheckingAnimReal.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }
             }

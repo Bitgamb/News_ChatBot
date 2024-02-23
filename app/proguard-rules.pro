@@ -45,3 +45,45 @@
 
 # Espresso
 -keep class androidx.test.espresso.** { *; }
+# Keep the classes in the roundedimageview library
+-keep class com.makeramen.** { *; }
+
+# Keep the classes in the play-services-ads library
+-keep class com.google.android.gms.** { *; }
+
+# Keep the classes in the androidx packages
+-keep class androidx.appcompat.** { *; }
+-keep class androidx.activity.** { *; }
+-keep class com.google.android.material.** { *; }
+-keep class androidx.constraintlayout.** { *; }
+-keep class androidx.swiperefreshlayout.** { *; }
+
+# Keep the classes in the firebase-auth and firebase-firestore libraries
+-keep class com.google.firebase.auth.** { *; }
+-keep class com.google.firebase.firestore.** { *; }
+
+# Keep the classes in the retrofit and gson libraries
+-keep class com.squareup.retrofit2.** { *; }
+-keep class com.google.gson.** { *; }
+
+# Keep the classes in the volley library
+-keep class com.android.volley.** { *; }
+
+# Keep the classes in the firebase-database library
+-keep class com.google.firebase.database.** { *; }
+
+# Keep the classes in the lottie library
+-keep class com.airbnb.lottie.** { *; }
+
+# Keep the classes in the picasso library
+-keep class com.squareup.picasso.** { *; }
+
+# Keep the classes in the prettytime library
+-keep class org.ocpsoft.prettytime.** { *; }
+
+# Keep the classes in the tensorflow-lite library
+-keep class org.tensorflow.** { *; }
+
+# Keep the classes in the razorpay library
+-keep class com.razorpay.** { *; }
+
