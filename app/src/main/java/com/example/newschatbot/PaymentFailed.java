@@ -78,9 +78,6 @@ public class PaymentFailed extends PaymentActivity {
 
 
 
-
-
-
     }
     // Method to save the receipt layout as an image
     private void saveReceiptAsImage(View view) {

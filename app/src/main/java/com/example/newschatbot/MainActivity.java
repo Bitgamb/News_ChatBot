@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     } // OnCreate Method End Here ================
 
     void addToChat (String message, String sendBy){

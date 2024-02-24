@@ -25,47 +25,27 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 >
-                <TextView
-                    style="@style/viewParent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Fake News Detector"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/montserrat_black"
-                    android:textColor="@color/blackTextColor"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
+
                 <com.airbnb.lottie.LottieAnimationView
+                    android:layout_marginTop="30dp"
                     android:id="@+id/lottieAnimationView"
                     android:layout_width="wrap_content"
                     android:layout_height="300dp"
                     android:foregroundGravity="center"
                     app:lottie_autoPlay="true"
                     app:lottie_repeatCount="50"
-                    app:lottie_rawRes="@raw/detector" />
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/filledTextField"
-                    android:layout_width="match_parent"
+                    app:lottie_rawRes="@raw/no_internet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="32dp"
-                    android:textColorHint="@color/grey"
-                    app:boxStrokeColor="@color/black"
-                    app:hintTextColor="@color/black"
-
-                    android:hint="Enter News To Detect">
-
-                    <!--this is the actual edit text which takes the input-->
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editTextTextMultiLine"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:text="       Check Your \nInternet Connection"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_black"
+                    android:textColor="@color/red"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
 
                 <!--<EditText
                     android:id="@+id/editTextTextMultiLine"
@@ -85,28 +65,17 @@
 -->
 
 
-                <ImageView
-                    android:id="@+id/imageButton_detect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="center"
 
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
-                    app:srcCompat="@drawable/button_detect" />
 
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/button_view_history"
+                    android:src="@drawable/button_try_again"
                     android:layout_gravity="center"
                     android:paddingTop="20dp"
                     android:paddingBottom="10dp"
-                    android:id="@+id/view_history"/>
+                    android:id="@+id/try_again"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </FrameLayout>

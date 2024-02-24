@@ -68,6 +68,7 @@ public class PaymentActivity extends Activity implements PaymentResultWithDataLi
                 startActivity(httpIntent);
             }
         });
+
     }
 
     public void startPayment() {

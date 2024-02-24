@@ -208,11 +208,11 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser currentUser = mAuth.getCurrentUser();
                                     String uid = currentUser.getUid();
-                                    databaseReference.child(uid).child("name").setValue(name);
-                                    databaseReference.child(uid).child("email").setValue(email);
-                                    databaseReference.child(uid).child("phone").setValue(phone);
-                                    databaseReference.child(uid).child("password").setValue(password);
-                                    databaseReference.child(uid).child("orderId").setValue("");
+                                    databaseReference.child("users").child(uid).child("name").setValue(name);
+                                    databaseReference.child("users").child(uid).child("email").setValue(email);
+                                    databaseReference.child("users").child(uid).child("phone").setValue(phone);
+                                    databaseReference.child("users").child(uid).child("password").setValue(password);
+                                    databaseReference.child("users").child(uid).child("orderId").setValue("");
 
                                     Toast.makeText(Register.this, "Account Registered !", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -239,7 +239,6 @@ public class Register extends AppCompatActivity {
 
 
         });
-
 
 
 

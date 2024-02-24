@@ -25,5 +25,6 @@ public class DatabaseCheckingAnimFake extends AppCompatActivity {
             }
         };
         handler.postDelayed(runnable, 5000);
+
     }
 }

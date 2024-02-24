@@ -116,9 +116,6 @@ public class NewsDisplay extends AppCompatActivity {
 
 
 
-
-
-
     }
 
     public void retrieveJson(String query ,String country, String apiKey){

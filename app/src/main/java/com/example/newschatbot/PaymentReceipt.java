@@ -49,7 +49,7 @@ public class PaymentReceipt extends PaymentActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String uid = currentUser.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference(uid);
+        mDatabase = FirebaseDatabase.getInstance().getReference("users");
         String email = currentUser.getEmail();
 
 
@@ -66,7 +66,7 @@ public class PaymentReceipt extends PaymentActivity {
 
 
             // Update the "orderId" child under the user's UID in the Realtime Database
-            mDatabase.child("orderId").setValue(orderId);
+            mDatabase.child(uid).child("orderId").setValue(orderId);
         } else {
             // Handle the case where no user is signed in
         }
@@ -102,10 +102,6 @@ public class PaymentReceipt extends PaymentActivity {
         nameTextView.setText("Contact: " + name);
         uidTextView.setText("UID:"+uid);
         emailTextView.setText("Email:"+email);
-
-
-
-
 
 
 

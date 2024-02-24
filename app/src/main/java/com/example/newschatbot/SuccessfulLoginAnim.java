@@ -26,5 +26,6 @@ public class SuccessfulLoginAnim extends AppCompatActivity {
         };
         handler.postDelayed(runnable, 4000);
 
+
     }
 }

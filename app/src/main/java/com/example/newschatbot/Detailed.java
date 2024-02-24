@@ -62,5 +62,6 @@ public class Detailed extends AppCompatActivity {
         if (webView.isShown()){
             loader.setVisibility(View.INVISIBLE);
         }
+
     }
 }

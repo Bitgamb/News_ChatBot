@@ -1,9 +1,13 @@
 package com.example.newschatbot;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +20,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieDrawable;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.tensorflow.lite.Interpreter;
 
@@ -36,6 +47,8 @@ import java.util.Map;
 
 public class FakeorRealActivity2 extends AppCompatActivity {
     public float[] data = new float[500];
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
     private ImageView detect;
     private TextView detecttext;
     private ImageButton help;
@@ -50,17 +63,80 @@ public class FakeorRealActivity2 extends AppCompatActivity {
     private String stringToPython;
     public Interpreter tflite;
     private ImageView whatsapp;
+    ImageView viewHistory;
 
     /* Access modifiers changed, original: protected */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView((int) R.layout.activity_fakeor_real2);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        String uid = currentUser.getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        viewHistory = findViewById(R.id.view_history);
+        if (!isInternetAvailable()) {
+            Intent intent = new Intent(getApplicationContext(), FakeorRealActivity2NoInternet.class);
+            startActivity(intent);
+            finish();
+        }
+
+
+
+
+
+        DatabaseReference historyRef = mDatabase.child("users").child(uid).child("news_detect_input_history");
+        DatabaseReference userRef = mDatabase.child("users").child(uid);
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child("orderId").exists()) {
+                    String orderId = snapshot.child("orderId").getValue().toString();
+                    if (orderId.isEmpty()) {
+                        historyRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (snapshot.getChildrenCount() > 10) {
+                                    // If the number of child nodes is greater than 10, navigate to MainActivity
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                // Handle onCancelled if needed
+                            }
+                        });
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle onCancelled if needed
+            }
+        });
+
+
+
+        viewHistory.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), DetectionHistory.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         this.newstext = (EditText) findViewById(R.id.editTextTextMultiLine);
         this.detect = (ImageView) findViewById(R.id.imageButton_detect);
-        this.detecttext = (TextView) findViewById(R.id.textView_detect);
+
         this.whatsapp = (ImageView) findViewById(R.id.imageView);
+
+
 
         this.detect.setVisibility(View.INVISIBLE);
         try {
@@ -71,17 +147,31 @@ public class FakeorRealActivity2 extends AppCompatActivity {
 
         this.detect.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
+                // Get the text from the EditText
+                String editTextValue = FakeorRealActivity2.this.newstext.getText().toString();
+
+
+
+                String fake = "Fake : "+ editTextValue ;
+                String real = "Real : "+ editTextValue ;
+
+                // Set the value of the EditText in the generated key
+
                 if (!FakeorRealActivity2.this.newstext.getText().toString().isEmpty()) {
                     FakeorRealActivity2 fakeorRealActivity2 = FakeorRealActivity2.this;
                     fakeorRealActivity2.stringToPython = fakeorRealActivity2.newstext.getText().toString();
                     fakeorRealActivity2 = FakeorRealActivity2.this;
                     if (((double) fakeorRealActivity2.doInference(fakeorRealActivity2.stringToPython)) > 0.5d) {
                         //fake news
+                        DatabaseReference inputHistoryRef = mDatabase.child("users").child(uid).child("news_detect_input_history").push();
+                        inputHistoryRef.setValue(fake);
                         Intent intent = new Intent(getApplicationContext(), DatabaseCheckingAnimFake.class);
                         startActivity(intent);
                         finish();
                     } else {
                         //real news
+                        DatabaseReference inputHistoryRef = mDatabase.child("users").child(uid).child("news_detect_input_history").push();
+                        inputHistoryRef.setValue(real);
                         Intent intent = new Intent(getApplicationContext(), DatabaseCheckingAnimReal.class);
                         startActivity(intent);
                         finish();
@@ -165,6 +255,14 @@ public class FakeorRealActivity2 extends AppCompatActivity {
     private MappedByteBuffer loadModelFile() throws IOException {
         AssetFileDescriptor openFd = getAssets().openFd("model_whatsapp_fakenews_500.tflite");
         return new FileInputStream(openFd.getFileDescriptor()).getChannel().map(MapMode.READ_ONLY, openFd.getStartOffset(), openFd.getDeclaredLength());
+    }
+    private boolean isInternetAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null) {
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        }
+        return false;
     }
     @Override
     public void onBackPressed() {
