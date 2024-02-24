@@ -19,8 +19,8 @@ public class Chat extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
     FirebaseAuth mAuth;
-    ImageView bot,news,rzp;
-    LinearLayout fake;
+
+    LinearLayout fake ,bot,news,rzp;
 
 
     @Override
