@@ -98,7 +98,7 @@ public class FakeorRealActivity2 extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.getChildrenCount() > 10) {
                                     // If the number of child nodes is greater than 10, navigate to MainActivity
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), TrialExpired.class);
                                     startActivity(intent);
                                     finish();
                                 }
