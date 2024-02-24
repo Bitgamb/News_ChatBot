@@ -34,17 +34,17 @@
                     android:foregroundGravity="center"
                     app:lottie_autoPlay="true"
                     app:lottie_repeatCount="50"
-                    app:lottie_rawRes="@raw/no_internet"
+                    app:lottie_rawRes="@raw/money"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Check Your\nInternet Connection"
+                    android:text="Looks like!! you have\nused the free 10 trials\nof News Detection!!"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:fontFamily="@font/googlesans_bold"
-                    android:textColor="@color/red"
+                    android:textColor="@color/black"
                     android:textSize="25dp"
                     android:textStyle="bold"/>
 
@@ -67,16 +67,26 @@
 
 
 
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Subscribe for our premium membership"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/googlesans_regular"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/button_try_again"
+                    android:src="@drawable/button_subscribe"
                     android:layout_gravity="center"
                     android:paddingTop="20dp"
                     android:paddingBottom="10dp"
-                    android:id="@+id/try_again"/>
+                    android:id="@+id/subscribe"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </FrameLayout>
