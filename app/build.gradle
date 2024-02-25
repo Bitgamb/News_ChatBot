@@ -33,12 +33,12 @@ android {
 
 
 dependencies {
+
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
 
     implementation 'com.google.firebase:firebase-storage:20.3.0'
-
 
 
     implementation 'com.google.android.gms:play-services-ads:22.6.0'
