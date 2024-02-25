@@ -202,20 +202,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/profile">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginTop="18dp"
-                        android:src="@drawable/trash" />
+                        android:src="@drawable/profile_activity" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/googlesans_bold"
-                        android:text="Delete"
+                        android:text="Profile"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 

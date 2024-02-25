@@ -20,7 +20,7 @@ public class Chat extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseAuth mAuth;
 
-    LinearLayout fake ,bot,news,rzp;
+    LinearLayout fake ,bot,news,rzp,profile;
 
 
     @Override
@@ -34,6 +34,16 @@ public class Chat extends AppCompatActivity {
         news=findViewById(R.id.news);
         rzp=findViewById(R.id.rzp);
         fake=findViewById(R.id.fake);
+        profile=findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ProfilePage.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
         fake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
