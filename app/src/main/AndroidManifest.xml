@@ -16,9 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Dark.NoActionBar"
         tools:targetApi="31">
-        <activity
-            android:name=".BottomNavigationManager"
-            android:exported="false" />
+
         <activity
             android:name=".ProfilePage"
             android:exported="false"
@@ -46,7 +44,8 @@
             android:exported="false" />
         <activity
             android:name=".PaymentActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/RazorPayPayment"/>
         <activity
             android:name=".Detailed"
             android:exported="false" />

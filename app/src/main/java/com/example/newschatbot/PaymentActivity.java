@@ -84,40 +84,27 @@ public class PaymentActivity extends Activity implements PaymentResultWithDataLi
 
         co.setKeyID(etApiKey);
 
-        EditText etCustomOptions = findViewById(R.id.et_custom_options);
-        if (!TextUtils.isEmpty(etCustomOptions.getText().toString())){
-            try{
-                JSONObject options = new JSONObject(etCustomOptions.getText().toString());
-                co.open(activity, options);
-            }catch (JSONException e){
-                Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
-                        .show();
-                e.printStackTrace();
-            }
-        }else{
-            try {
-                JSONObject options = new JSONObject();
-                options.put("name", "Razorpay Corp");
-                options.put("description", "Ad-Free Subscription Charges");
-                options.put("send_sms_hash",true);
-                options.put("allow_rotation", true);
-                //You can omit the image option to fetch the image from dashboard
-                options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-                options.put("currency", "INR");
-                options.put("amount", "10000");
+        try {
+            JSONObject options = new JSONObject();
+            options.put("name", "Razorpay Corp");
+            options.put("description", "Ad-Free Subscription Charges");
+            options.put("send_sms_hash",true);
+            options.put("allow_rotation", true);
+            //You can omit the image option to fetch the image from dashboard
+            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("currency", "INR");
+            options.put("amount", "10000");
 
-
-
-                co.open(activity, options);
-            } catch (Exception e) {
-                Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
-                        .show();
-                e.printStackTrace();
-            }
+            co.open(activity, options);
+        } catch (Exception e) {
+            Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
+                    .show();
+            e.printStackTrace();
         }
-
-
     }
+
+
+
 
     /**
      * The name of the function has to be
