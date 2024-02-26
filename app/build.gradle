@@ -36,6 +36,7 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.krokyze:ucropnedit:2.2.6-2'
 
 
     implementation 'com.google.firebase:firebase-storage:20.3.0'

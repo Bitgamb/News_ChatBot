@@ -4,6 +4,7 @@ package com.example.newschatbot;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -23,6 +24,14 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +52,8 @@ public class NewsDisplay extends AppCompatActivity {
     Adapter adapter;
     private AdView mAdView;
     List<Articles>  articles = new ArrayList<>();
+    private DatabaseReference userDatabase;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +61,11 @@ public class NewsDisplay extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_news_display);
 
+
         swipeRefreshLayout = findViewById(R.id.srl);
         recyclerView = findViewById(R.id.recyclerView);
+
+
 
         etQuery = findViewById(R.id.etQuery);
         btnSearch = findViewById(R.id.btnSearch);
@@ -71,6 +85,36 @@ public class NewsDisplay extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            // Get the UID
+            uid = currentUser.getUid();
+
+            // Initialize the user database reference
+            userDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+
+            // Check orderId in the database
+            userDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String orderId = dataSnapshot.child("orderId").getValue(String.class);
+
+                    // Check if orderId is not an empty string
+                    if (orderId != null && !orderId.isEmpty()) {
+                        // Hide the AdView
+                        mAdView.setVisibility(View.GONE);
+                    } else {
+                        // Show the AdView
+                        mAdView.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle database error if needed
+                }
+            });
+        }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         final String country = getCountry();

@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/cropImageView"
+    <com.yalantis.ucrop.view.UCropView
+        android:id="@+id/ucropView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:layout_above="@+id/cropButton"/>
+        android:layout_above="@+id/cropButton"
+        android:layout_weight="1"
+        android:background="@android:color/transparent" />
 
     <ImageView
         android:id="@+id/cropButton"

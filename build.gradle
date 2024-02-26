@@ -1,4 +1,8 @@
 buildscript {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        // Add other repositories as needed
+    }
     ext {
         agp_version = '8.1.2'
     }
@@ -7,10 +11,7 @@ buildscript {
 
 
     }
-    repositories {
-        maven { url 'https://jitpack.io' }
-        // Add other repositories as needed
-    }
+
 
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 

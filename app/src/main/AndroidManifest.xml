@@ -17,10 +17,12 @@
         android:theme="@style/Theme.Material3.Dark.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".BottomNavigationManager"
+            android:exported="false" />
+        <activity
             android:name=".ProfilePage"
             android:exported="false"
-            android:theme="@style/AppTheme"
-            />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".TrialExpired"
             android:exported="false" />
@@ -84,7 +86,11 @@
         <activity android:name=".FakeorRealActivity2" />
         <activity android:name=".FakeorRealActivity2NoInternet" />
         <activity android:name=".DetectionResultReal" />
-        <activity android:name=".ProfilePage$CropImageActivity" />
+        <activity android:name=".CropImageActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

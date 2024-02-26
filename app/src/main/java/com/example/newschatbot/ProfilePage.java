@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+import com.yalantis.ucrop.UCrop;
+import com.yalantis.ucrop.view.UCropView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -218,63 +220,6 @@ public class ProfilePage extends AppCompatActivity {
 
     }
 
-    public static class CropImageActivity extends AppCompatActivity {
 
-        private ImageView imageView;
-        private Uri imageUri;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_crop_image);
-
-            imageView = findViewById(R.id.cropImageView);
-
-            imageUri = getIntent().getParcelableExtra("imageUri");
-
-            if (imageUri != null) {
-                imageView.setImageURI(imageUri);
-            }
-
-            findViewById(R.id.cropButton).setOnClickListener(v -> cropImage());
-        }
-
-        private void cropImage() {
-            try {
-                // Retrieve the original bitmap from the ImageView
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
-                Bitmap originalBitmap = bitmapDrawable.getBitmap();
-
-                // Calculate the desired 1:1 aspect ratio
-                int targetWidth = Math.min(originalBitmap.getWidth(), originalBitmap.getHeight());
-                int targetHeight = targetWidth;
-
-                // Calculate the crop position to center the square
-                int x = (originalBitmap.getWidth() - targetWidth) / 2;
-                int y = (originalBitmap.getHeight() - targetHeight) / 2;
-
-                // Create the cropped bitmap
-                Bitmap croppedBitmap = Bitmap.createBitmap(originalBitmap, x, y, targetWidth, targetHeight);
-
-                // Save the cropped bitmap to a temporary file
-                File outputFile = new File(getCacheDir(), "cropped_image.jpg");
-                try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
-                    croppedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                // Pass the cropped image URI back to the calling activity
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("croppedImageUri", Uri.fromFile(outputFile));
-                setResult(RESULT_OK, resultIntent);
-                finish();
-            } catch (Exception e) {
-                e.printStackTrace();
-                // Handle exceptions (e.g., if the image is not a valid bitmap)
-                Toast.makeText(this, "Failed to crop image", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }
-    }
 }
