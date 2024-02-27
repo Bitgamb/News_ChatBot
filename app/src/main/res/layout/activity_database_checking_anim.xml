@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/database"
-        app:lottie_repeatCount="3"
+        app:lottie_repeatCount="2"
         tools:ignore="MissingConstraints" />
 
     <ImageView

@@ -175,6 +175,8 @@ public class FakeorRealActivity2 extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), DatabaseCheckingAnimReal.class);
                         startActivity(intent);
                         finish();
+
+
                     }
                 }
             }
@@ -191,7 +193,7 @@ public class FakeorRealActivity2 extends AppCompatActivity {
     private void readcsvraw() {
         String str = "ReadCSVraw";
         Log.d(str, "Reaching here");
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.tokenizer_500), StandardCharsets.UTF_8));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.tokenizer), StandardCharsets.UTF_8));
         while (true) {
             try {
                 String readLine = bufferedReader.readLine();

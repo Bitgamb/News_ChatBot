@@ -25,7 +25,7 @@ public class DatabaseCheckingAnimReal extends AppCompatActivity {
                 finish();
             }
         };
-        handler.postDelayed(runnable, 5000);
+        handler.postDelayed(runnable, 3000);
 
     }
 }
