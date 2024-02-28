@@ -48,6 +48,7 @@
             android:theme="@style/RazorPayPayment" />
         <activity
             android:name=".Detailed"
+            android:theme="@style/NewsDisplay"
             android:exported="false" />
         <activity
             android:name=".NewsDisplay"
@@ -82,6 +83,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/NewsDisplay"
             android:exported="true" />
         <activity android:name=".FakeorRealActivity2" />
         <activity android:name=".FakeorRealActivity2NoInternet" />
