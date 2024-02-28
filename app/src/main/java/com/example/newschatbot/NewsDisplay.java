@@ -29,6 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -53,6 +54,7 @@ public class NewsDisplay extends AppCompatActivity {
     private DatabaseReference userDatabase;
     private String uid;
     private String currentCategory = "";
+    private DatabaseReference userOpenCountRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,11 @@ public class NewsDisplay extends AppCompatActivity {
         if (currentUser != null) {
             uid = currentUser.getUid();
             userDatabase = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+            userOpenCountRef = FirebaseDatabase.getInstance().getReference().child("users").child(uid).child("open_count");
+
+            // Increment open count by 1 when the activity is created
+            incrementOpenCount();
+
             userDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -212,6 +219,9 @@ public class NewsDisplay extends AppCompatActivity {
         btnClose = dialog.findViewById(R.id.close);
 
         btnClose.setOnClickListener(v -> dialog.dismiss());
+    }
+    private void incrementOpenCount() {
+        userOpenCountRef.setValue(ServerValue.increment(1));
     }
 
     @Override

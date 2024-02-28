@@ -33,10 +33,18 @@ android {
 
 
 dependencies {
-
+    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.github.krokyze:ucropnedit:2.2.6-2'
+    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.android.support:support-annotations:28.0.0'
+
+
+
+
+
 
 
     implementation 'com.google.firebase:firebase-storage:20.3.0'

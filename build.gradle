@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url 'https://jitpack.io' }
+        jcenter()
         // Add other repositories as needed
     }
     ext {

@@ -18,6 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,12 +49,26 @@ public class MainActivity extends AppCompatActivity {
 
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     OkHttpClient client = new OkHttpClient();
+    private DatabaseReference userChatRef;
+    private FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        // Initialize Firebase
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        // Get the current user
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null) {
+            // Construct the path using the user's UID
+            String userUid = currentUser.getUid();
+            userChatRef = firebaseDatabase.getReference("users").child(userUid).child("bot_chat");
+        }
 
         //====================================
         message_text_text = findViewById(R.id.message_text_text);
@@ -114,13 +133,28 @@ public class MainActivity extends AppCompatActivity {
                 messageList.add(new Message(message, sendBy));
                 messageAdapter.notifyDataSetChanged();
                 recyclerView.smoothScrollToPosition(messageAdapter.getItemCount());
+                saveMessageToFirebase(message, sendBy);
             }
         });
     } // addToChat End Here =====================
+    void saveMessageToFirebase(String message, String sendBy) {
+        // Check if userChatRef is not null (user is authenticated)
+        if (userChatRef != null) {
+            // Create a unique key for each message
+            String messageId = userChatRef.push().getKey();
+
+            // Create a Message object
+            Message firebaseMessage = new Message(message, sendBy);
+
+            // Save the message to Firebase using the unique key under the user's path
+            userChatRef.child(messageId).setValue(firebaseMessage);
+        }
+    }
 
     void addResponse(String response){
         messageList.remove(messageList.size()-1);
         addToChat(response, Message.SEND_BY_BOT);
+        saveMessageToFirebase(response, Message.SEND_BY_BOT);
     } // addResponse End Here =======
 
     void callAPI(String question){

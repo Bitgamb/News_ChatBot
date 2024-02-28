@@ -43,6 +43,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="12dp"
+                android:id="@+id/news"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -50,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:id="@+id/news"
+
                     android:orientation="vertical"
                     >
 
@@ -82,6 +83,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="12dp"
+                android:id="@+id/bot"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -89,7 +91,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:id="@+id/bot"
+
                     >
 
                     <ImageView
@@ -119,6 +121,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="12dp"
+                android:id="@+id/rzp"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -126,7 +129,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:id="@+id/rzp">
+                    >
 
                     <ImageView
                         android:layout_width="70dp"
@@ -161,6 +164,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="12dp"
+                android:id="@+id/fake"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -168,7 +172,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:id="@+id/fake">
+                   >
 
                     <ImageView
                         android:layout_width="70dp"
@@ -196,6 +200,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="12dp"
+                android:id="@+id/profile"
                 app:cardElevation="5dp">
 
                 <LinearLayout
@@ -203,7 +208,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:id="@+id/profile">
+                   >
 
                     <ImageView
                         android:layout_width="70dp"
@@ -221,6 +226,42 @@
                         android:textSize="18sp" />
 
                 </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/gray"
+                app:cardCornerRadius="12dp"
+                android:id="@+id/stats"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="18dp"
+                        android:src="@drawable/stats" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/googlesans_bold"
+                        android:text="Stats"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
 
             </androidx.cardview.widget.CardView>
 

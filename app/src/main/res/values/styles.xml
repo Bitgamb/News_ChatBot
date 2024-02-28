@@ -30,7 +30,11 @@
 
         <item name="android:statusBarColor">@color/black</item>
 
+
     </style>
+    <style name="Stats" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/grey</item></style>>
 
 
     <style name="parent">

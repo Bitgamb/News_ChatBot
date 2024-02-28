@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Dark.NoActionBar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".StatisticalHistory"
+            android:theme="@style/Stats"
+            android:exported="false" />
         <activity
             android:name=".ProfilePage"
             android:exported="false"
@@ -48,12 +51,12 @@
             android:theme="@style/RazorPayPayment" />
         <activity
             android:name=".Detailed"
-            android:theme="@style/NewsDisplay"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NewsDisplay" />
         <activity
             android:name=".NewsDisplay"
-            android:theme="@style/NewsDisplay"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NewsDisplay" />
         <activity
             android:name=".Chat"
             android:exported="false" />
@@ -83,8 +86,8 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NewsDisplay"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/NewsDisplay" />
         <activity android:name=".FakeorRealActivity2" />
         <activity android:name=".FakeorRealActivity2NoInternet" />
         <activity android:name=".DetectionResultReal" />

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,7 +21,8 @@ public class Chat extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseAuth mAuth;
 
-    LinearLayout fake ,bot,news,rzp,profile;
+
+    CardView stats,fake ,bot,news,rzp,profile;
 
 
     @Override
@@ -35,6 +37,17 @@ public class Chat extends AppCompatActivity {
         rzp=findViewById(R.id.rzp);
         fake=findViewById(R.id.fake);
         profile=findViewById(R.id.profile);
+        stats=findViewById(R.id.stats);
+
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), StatisticalHistory.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
