@@ -24,4 +24,11 @@
     <color name="gray">#2d2d2d</color>
     <color name="grey">#2d2d2d</color>
     <color name="bluesplash">#0088FF</color>
+    <color name="red_300">#E57373</color>
+    <color name="light_green_300">#AED581</color>
+    <color name="purple_300">#BA68C8</color>
+    <color name="light_blue_300">#4FC3F7</color>
+    <color name="light_blue_400">#29B6F6</color>
+    <color name="pink_300">#F06292</color>
+    <color name="orange_300">#FFB74D</color>
 </resources>

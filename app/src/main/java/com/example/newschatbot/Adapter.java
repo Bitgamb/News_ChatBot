@@ -54,7 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         holder.tvTitle.setText(a.getTitle());
         holder.tvSource.setText(a.getSource().getName());
-        holder.tvDate.setText("\u2022"+dateTime(a.getPublishedAt()));
+        holder.tvDate.setText("\u2024"+dateTime(a.getPublishedAt()));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

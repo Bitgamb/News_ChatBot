@@ -3,5 +3,11 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="enter_message">enter message</string>
+    <string name="category_business">Business</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_health">Health</string>
+    <string name="category_science">Science</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_technology">Technology</string>
 
 </resources>

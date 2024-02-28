@@ -20,6 +20,14 @@ public interface ApiInterface {
             @Query("q") String query,
             @Query("apiKey") String apiKey
     );
+    // Add the new method for category-based news
+    @GET("top-headlines")
+    Call<Headlines> getCategoryNews(
+            @Query("country") String country,
+            @Query("category") String category,
+            @Query("apiKey") String apiKey
+    );
+
 
 
 

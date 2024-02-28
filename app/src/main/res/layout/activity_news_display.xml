@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="30dp">
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,6 +47,399 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mxlarge"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/spacing_smlarge"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBusiness"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="business"
+                app:cardBackgroundColor="@color/light_blue_400"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:src="@drawable/ic_business"
+                            android:tint="@color/light_blue_400"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_business"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEntertainment"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="entertainment"
+                app:cardBackgroundColor="@color/pink_300"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large"
+                    android:tag="entertainment">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/ic_entertainment"
+                            android:tint="@color/pink_300"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_entertainment"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHealth"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="health"
+                app:cardBackgroundColor="@color/light_green_300"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:src="@drawable/ic_health"
+                            android:tint="@color/light_green_300"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_health"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardScience"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="science"
+                app:cardBackgroundColor="@color/purple_300"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:src="@drawable/ic_science"
+                            android:tint="@color/purple_300"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_science"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSports"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="sports"
+                app:cardBackgroundColor="@color/red_300"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:src="@drawable/ic_sports"
+                            android:tint="@color/red_300"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_sports"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_middle"
+                android:layout_height="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTechnology"
+                android:layout_width="@dimen/dashboardNewsCategoryCardWidth"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="categoryClicked"
+                android:tag="technology"
+                app:cardBackgroundColor="@color/orange_300"
+                app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
+                app:cardElevation="0dp"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
+                        android:layout_height="@dimen/dashboardNewsCategoryCardImageWidthHeight">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:tint="@android:color/white"
+                            app:srcCompat="@drawable/shape_circle"
+                            tools:ignore="UseAppTint" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:src="@drawable/ic_technology"
+                            android:tint="@color/orange_300"
+                            tools:ignore="UseAppTint" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:text="@string/category_technology"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        app:fontFamily="sans-serif-medium" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="@dimen/spacing_smlarge"
+                android:layout_height="0dp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 
     <GridLayout
