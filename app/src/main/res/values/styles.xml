@@ -25,6 +25,10 @@
         <item name="colorPrimaryDark">@color/colorLoginPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">#02042b</item>
+    </style>
+    <style name="NewsDisplay" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/black</item>
 
     </style>
 
