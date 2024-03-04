@@ -1,12 +1,15 @@
 package com.example.newschatbot;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,12 +20,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.newschatbot.Model.Articles;
 import com.example.newschatbot.Model.Headlines;
+import com.example.newschatbot.databinding.ActivityMainBinding;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -39,6 +44,7 @@ import java.util.Locale;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import com.example.newschatbot.databinding.ActivityMainBinding;
 
 public class NewsDisplay extends AppCompatActivity {
 
@@ -55,12 +61,61 @@ public class NewsDisplay extends AppCompatActivity {
     private String uid;
     private String currentCategory = "";
     private DatabaseReference userOpenCountRef;
+    LinearLayout chatbot,menu,detect,profile,stats;
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_news_display);
+        chatbot=findViewById(R.id.chatbot);
+        menu=findViewById(R.id.menu);
+        detect=findViewById(R.id.detect);
+        profile=findViewById(R.id.profile);
+        stats=findViewById(R.id.stats);
+        chatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), Chat.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        detect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), FakeorRealActivity2.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), ProfilePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), StatisticalHistory.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         swipeRefreshLayout = findViewById(R.id.srl);
         recyclerView = findViewById(R.id.recyclerView);

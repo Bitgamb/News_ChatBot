@@ -484,19 +484,218 @@
     </GridLayout>
 
 
-
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srl"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="350dp"
+        android:layout_weight="0.1">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:id="@+id/recyclerView"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!-- Add CardView items for navigation, you can customize these as needed -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/spacing_middle"
+                app:cardBackgroundColor="@color/grey"
+
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+android:id="@+id/menu"
+                    android:gravity="center">
+
+                    <!-- Image View -->
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/menu_dash"/>
+
+                    <!-- Text View -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu"
+                        android:textSize="10dp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Add your onClickListener here or in the parent view -->
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/spacing_middle"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/chatbot"
+                    android:gravity="center">
+
+                    <!-- Image View -->
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newscb"/>
+
+                    <!-- Text View -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ChatBot"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Add your onClickListener here or in the parent view -->
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/spacing_middle"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/detect"
+                    android:gravity="center">
+
+                    <!-- Image View -->
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/fake_news_chat"/>
+
+                    <!-- Text View -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Detect"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Add your onClickListener here or in the parent view -->
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/spacing_middle"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/profile"
+                    android:gravity="center">
+
+                    <!-- Image View -->
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile_activity"/>
+
+                    <!-- Text View -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Add your onClickListener here or in the parent view -->
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="@dimen/spacing_middle"
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/stats"
+                    android:gravity="center">
+
+                    <!-- Image View -->
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/stats"/>
+
+                    <!-- Text View -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Stats"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+
+                <!-- Add your onClickListener here or in the parent view -->
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+            <!-- Add more CardViews for additional navigation items -->
+
+        </LinearLayout>
+
+
+
+
+
 
 </LinearLayout>

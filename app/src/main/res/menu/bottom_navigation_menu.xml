@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationMenu"
+        android:icon="@drawable/baseline_menu_24"
+        android:title="Menu"
+        />
+
+
+
+    <item
+        android:id="@+id/navigationBot"
+        android:icon="@drawable/baseline_assistant_24"
+        android:title="ChatBot" />
+    <item
+        android:id="@+id/navigationDetect"
+        android:icon="@drawable/baseline_block_24"
+        android:title="Detect" />
+
+    <item
+        android:id="@+id/navigationMyProfile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="User" />
+    <item
+        android:id="@+id/navigationStats"
+        android:icon="@drawable/baseline_assessment_24"
+        android:title="Stats" />
+
+</menu>

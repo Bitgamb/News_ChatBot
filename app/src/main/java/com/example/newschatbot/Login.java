@@ -42,7 +42,7 @@ public class Login extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null) {
-            Intent intent = new Intent(getApplicationContext(), Chat.class);
+            Intent intent = new Intent(getApplicationContext(), NewsDisplay.class);
             startActivity(intent);
             finish();
         }

@@ -97,5 +97,11 @@ public class Chat extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), NewsDisplay.class);
+        startActivity(intent);
+        finish();
+    }
 
 }

@@ -27,9 +27,22 @@
         <item name="android:statusBarColor">#02042b</item>
     </style>
     <style name="NewsDisplay" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
 
+        <!-- Customize your theme here. -->
         <item name="android:statusBarColor">@color/black</item>
 
+
+    </style>
+    <style name="Theme.BottomNavigation" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>
     <style name="Stats" parent="Theme.MaterialComponents.Light.NoActionBar">
