@@ -80,7 +80,9 @@
             android:exported="false" />
         <activity
             android:name=".Register"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:statusBarColor="@color/white"/>
         <activity
             android:name=".Login"
             android:exported="true" />

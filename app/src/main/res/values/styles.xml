@@ -47,6 +47,11 @@
 
 
     </style>
+
+    <style name="Register" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
     <style name="Theme.BottomNavigation" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>

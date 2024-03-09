@@ -1,0 +1,6 @@
+<!-- ic_eye_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/user_clip_focused" android:state_focused="true" />
+    <item android:drawable="@drawable/user_clip" />
+</selector>
+

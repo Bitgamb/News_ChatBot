@@ -1,10 +1,13 @@
 package com.example.newschatbot;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,6 +35,8 @@ public class Register extends AppCompatActivity {
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     TextView textView,confirmpasswordSyntax,emailSyntax,passwordSyntax,nameSyntax,phoneSyntax;
+    private boolean isPasswordVisible = false;
+    private TextInputEditText passwordEditText;
 
 
 
@@ -41,10 +46,10 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         mAuth= FirebaseAuth.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
+        setStatusBarColor(getResources().getColor(android.R.color.white));
 
         setContentView(R.layout.activity_register);
 //edit text field value fetching
@@ -249,5 +254,31 @@ public class Register extends AppCompatActivity {
         startActivity(intent);
         finish();
 
+    }
+    public void togglePasswordVisibility(View view) {
+        isPasswordVisible = !isPasswordVisible;
+
+        // Change the input type based on visibility state
+        if (isPasswordVisible) {
+            passwordEditText.setInputType(
+                    InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            );
+        } else {
+            passwordEditText.setInputType(
+                    InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
+            );
+        }
+
+        // Move the cursor to the end of the text for a better user experience
+        passwordEditText.setSelection(passwordEditText.getText().length());
+    }
+    private void setStatusBarColor(int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(color);
+            View decor = window.getDecorView();
+            decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
     }
 }
