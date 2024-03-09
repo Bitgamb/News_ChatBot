@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Text color when focused -->
+    <item android:state_focused="true" android:color="@color/black" />
+
+    <!-- Default text color -->
+    <item android:color="@color/light_gray" />
+
+</selector>

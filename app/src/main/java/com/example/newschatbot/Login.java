@@ -3,7 +3,9 @@ package com.example.newschatbot;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,6 +34,10 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
     TextView emailSyntax,passwordSyntax,forgotPass;
 
+    private boolean isPasswordVisible = false;
+    private TextInputEditText passwordEditText;
+
+
 
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://news-chatbot-15410-default-rtdb.firebaseio.com/");
@@ -59,11 +65,13 @@ public class Login extends AppCompatActivity {
         progressBar=findViewById(R.id.progressBar);
         textView= findViewById(R.id.registernow);
         buttonLogin= findViewById(R.id.btn_login);
-        otpBtn= findViewById(R.id.otp_btn);
+        passwordEditText = findViewById(R.id.password);
+
         forgotPass=findViewById(R.id.forgotpass);
 
         emailSyntax=findViewById(R.id.LoginActivityEmailError);
         passwordSyntax=findViewById(R.id.passwordsyntax);
+
 
         forgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,15 +84,7 @@ public class Login extends AppCompatActivity {
         });
 
 
-        otpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), OTP.class);
-                startActivity(intent);
-                finish();
 
-            }
-        });
 
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -202,5 +202,24 @@ public class Login extends AppCompatActivity {
 
     }
 
+    public void togglePasswordVisibility(View view) {
+        isPasswordVisible = !isPasswordVisible;
 
+        // Change the input type based on visibility state
+        if (isPasswordVisible) {
+            passwordEditText.setInputType(
+                    InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            );
+        } else {
+            passwordEditText.setInputType(
+                    InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD
+            );
+        }
+
+        // Move the cursor to the end of the text for a better user experience
+        passwordEditText.setSelection(passwordEditText.getText().length());
+    }
 }
+
+
+
