@@ -43,11 +43,13 @@
         <!-- Status bar color. -->
 
         <!-- Customize your theme here. -->
-        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:statusBarColor">@color/white</item>
 
 
     </style>
-
+    <style name="CHATBOT" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
     <style name="Register" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="android:statusBarColor">@color/white</item>

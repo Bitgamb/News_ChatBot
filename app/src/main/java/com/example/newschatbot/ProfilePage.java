@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +36,8 @@ public class ProfilePage extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     TextView titleName, titleUsername, profileName, profileEmail, profilePhone, profileMembership;
-    ImageView profilePicButton, backButton, logout, profileImg;
+    MaterialButton profilePicButton, backButton, logout;
+    ImageView  profileImg;
 
     private static final int REQUEST_PICK_IMAGE = 1;
     private static final int REQUEST_CROP_IMAGE = 2;

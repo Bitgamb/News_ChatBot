@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -61,7 +62,7 @@ public class NewsDisplay extends AppCompatActivity {
     private String uid;
     private String currentCategory = "";
     private DatabaseReference userOpenCountRef;
-    LinearLayout chatbot,menu,detect,profile,stats;
+    ImageView chatbot,menu,detect,profile,stats;
 
     ActivityMainBinding binding;
 

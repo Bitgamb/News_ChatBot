@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".NewsDisplay">
 
@@ -20,11 +20,12 @@
             android:text="NEWS"
             android:layout_weight="10"
             android:fontFamily="@font/g_bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginLeft="10dp"
-            android:background="@color/black"
-            android:padding="10dp"/>
+
+            android:padding="10dp"
+            android:elevation="5dp"/>
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="16dp"
             android:layout_height="16dp"
@@ -71,17 +72,19 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="business"
-                app:cardBackgroundColor="@color/light_blue_400"
+                app:cardBackgroundColor="@color/bluesplash"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
-                app:cardUseCompatPadding="false">
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="false"
+               >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:orientation="vertical"
-                    android:padding="@dimen/spacing_large">
+                    android:padding="@dimen/spacing_large"
+                    >
 
                     <RelativeLayout
                         android:layout_width="@dimen/dashboardNewsCategoryCardImageWidthHeight"
@@ -99,9 +102,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
-                            android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:layout_marginStart="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:layout_marginTop="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:layout_marginEnd="@dimen/dashboardNewsCategoryCardImageMargin"
+                            android:layout_marginBottom="@dimen/dashboardNewsCategoryCardImageMargin"
                             android:src="@drawable/ic_business"
-                            android:tint="@color/light_blue_400"
+                            android:tint="@color/bluesplash"
                             tools:ignore="UseAppTint" />
 
                     </RelativeLayout>
@@ -133,9 +139,9 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="entertainment"
-                app:cardBackgroundColor="@color/pink_300"
+                app:cardBackgroundColor="#ED212C"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
+                app:cardElevation="5dp"
                 app:cardUseCompatPadding="false">
 
                 <LinearLayout
@@ -163,9 +169,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
-                            android:layout_margin="7dp"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_marginBottom="7dp"
                             android:src="@drawable/ic_entertainment"
-                            android:tint="@color/pink_300"
+                            android:tint="#ED212C"
                             tools:ignore="UseAppTint" />
 
                     </RelativeLayout>
@@ -197,9 +206,9 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="health"
-                app:cardBackgroundColor="@color/light_green_300"
+                app:cardBackgroundColor="#b6d409"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
+                app:cardElevation="5dp"
                 app:cardUseCompatPadding="false">
 
                 <LinearLayout
@@ -227,7 +236,7 @@
                             android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
                             android:src="@drawable/ic_health"
-                            android:tint="@color/light_green_300"
+                            android:tint="#b6d409"
                             tools:ignore="UseAppTint" />
 
                     </RelativeLayout>
@@ -259,9 +268,9 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="science"
-                app:cardBackgroundColor="@color/purple_300"
+                app:cardBackgroundColor="#B74FCD"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
+                app:cardElevation="5dp"
                 app:cardUseCompatPadding="false">
 
                 <LinearLayout
@@ -321,9 +330,9 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="sports"
-                app:cardBackgroundColor="@color/red_300"
+                app:cardBackgroundColor="#FB504B"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
+                app:cardElevation="5dp"
                 app:cardUseCompatPadding="false">
 
                 <LinearLayout
@@ -351,7 +360,7 @@
                             android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dashboardNewsCategoryCardImageMargin"
                             android:src="@drawable/ic_sports"
-                            android:tint="@color/red_300"
+                            android:tint="#FB504B"
                             tools:ignore="UseAppTint" />
 
                     </RelativeLayout>
@@ -383,9 +392,9 @@
                 android:focusable="true"
                 android:onClick="categoryClicked"
                 android:tag="technology"
-                app:cardBackgroundColor="@color/orange_300"
+                app:cardBackgroundColor="#ffb64c"
                 app:cardCornerRadius="@dimen/dashboardNewsCategoryCardRadius"
-                app:cardElevation="0dp"
+                app:cardElevation="5dp"
                 app:cardUseCompatPadding="false">
 
                 <LinearLayout
@@ -450,6 +459,7 @@
         android:paddingBottom="10dp"
         android:columnCount="2"
         android:background="@drawable/black_background"
+        android:elevation="5dp"
         android:rowCount="2">
 
         <EditText
@@ -459,8 +469,8 @@
             android:ems="10"
             android:hint="Search"
             android:fontFamily="@font/g_bold"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
             android:padding="10dp"
             android:background="@drawable/black_background"
             android:layout_column="0"
@@ -473,7 +483,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/black_background"
-            android:backgroundTint="@color/dark_blue"
+            android:backgroundTint="@color/gray"
             android:layout_column="1"
 
             android:paddingRight="20dp"
@@ -499,199 +509,96 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <LinearLayout
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_bg"
+        android:elevation="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
-        <LinearLayout
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:layout_marginRight="5dp"
+            android:src="@drawable/menu_dash" />
 
-            <!-- Add CardView items for navigation, you can customize these as needed -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/spacing_middle"
-                app:cardBackgroundColor="@color/grey"
-
-                app:cardCornerRadius="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-android:id="@+id/menu"
-                    android:gravity="center">
-
-                    <!-- Image View -->
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/menu_dash"/>
-
-                    <!-- Text View -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Menu"
-                        android:textSize="10dp"
-                        android:textColor="#FFFFFF"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <!-- Add your onClickListener here or in the parent view -->
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/spacing_middle"
-                app:cardBackgroundColor="@color/grey"
-                app:cardCornerRadius="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/chatbot"
-                    android:gravity="center">
-
-                    <!-- Image View -->
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/newscb"/>
-
-                    <!-- Text View -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ChatBot"
-                        android:textSize="10dp"
-                        android:gravity="center"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-
-                <!-- Add your onClickListener here or in the parent view -->
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/spacing_middle"
-                app:cardBackgroundColor="@color/grey"
-                app:cardCornerRadius="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/detect"
-                    android:gravity="center">
-
-                    <!-- Image View -->
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/fake_news_chat"/>
-
-                    <!-- Text View -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Detect"
-                        android:textSize="10dp"
-                        android:gravity="center"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-
-                <!-- Add your onClickListener here or in the parent view -->
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/spacing_middle"
-                app:cardBackgroundColor="@color/grey"
-                app:cardCornerRadius="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/profile"
-                    android:gravity="center">
-
-                    <!-- Image View -->
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/profile_activity"/>
-
-                    <!-- Text View -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Profile"
-                        android:textSize="10dp"
-                        android:gravity="center"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-
-                <!-- Add your onClickListener here or in the parent view -->
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="@dimen/spacing_middle"
-                app:cardBackgroundColor="@color/grey"
-                app:cardCornerRadius="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:id="@+id/stats"
-                    android:gravity="center">
-
-                    <!-- Image View -->
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/stats"/>
-
-                    <!-- Text View -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Stats"
-                        android:textSize="10dp"
-                        android:gravity="center"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-
-                <!-- Add your onClickListener here or in the parent view -->
-
-            </androidx.cardview.widget.CardView>
+        <!-- Text View -->
 
 
+        <!-- Add your onClickListener here or in the parent view -->
 
 
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/chatbot"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/newscb" />
 
-            <!-- Add more CardViews for additional navigation items -->
+        <!-- Text View -->
 
-        </LinearLayout>
+
+        <!-- Add your onClickListener here or in the parent view -->
+
+
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/detect"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/fake_news_chat" />
+
+        <!-- Text View -->
+
+
+        <!-- Add your onClickListener here or in the parent view -->
+
+
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/profile_activity" />
+
+        <!-- Text View -->
+
+        <!-- Add your onClickListener here or in the parent view -->
+
+
+        <!-- Image View -->
+        <ImageView
+            android:id="@+id/stats"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/stats" />
+
+        <!-- Text View -->
+
+
+        <!-- Add your onClickListener here or in the parent view -->
+
+
+        <!-- Add more CardViews for additional navigation items -->
+
+    </LinearLayout>
+
 
 
 

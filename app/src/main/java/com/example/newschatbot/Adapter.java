@@ -54,7 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         holder.tvTitle.setText(a.getTitle());
         holder.tvSource.setText(a.getSource().getName());
-        holder.tvDate.setText("\u2024"+dateTime(a.getPublishedAt()));
+        holder.tvDate.setText(dateTime(a.getPublishedAt()));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,18 +95,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
 
-    public String dateTime(String t){
+    public String dateTime(String t) {
         PrettyTime prettyTime = new PrettyTime(new Locale(getCountry()));
-        String time = null;
+        String formattedDateTime = null;
         try {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:",Locale.ENGLISH);
-            Date date = simpleDateFormat.parse(t);
-            time = prettyTime.format(date);
-        }catch (ParseException e) {
+            SimpleDateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+            Date date = inputDateFormat.parse(t);
+
+            // Format the date and time with AM/PM
+            SimpleDateFormat outputDateFormat = new SimpleDateFormat("MMM dd, yyyy 'at' hh:mm a", Locale.ENGLISH);
+            formattedDateTime = outputDateFormat.format(date);
+        } catch (ParseException e) {
             e.printStackTrace();
         }
-        return time;
-
+        return formattedDateTime;
     }
 
     public String getCountry(){
