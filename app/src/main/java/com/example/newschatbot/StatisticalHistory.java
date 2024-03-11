@@ -67,16 +67,57 @@ public class StatisticalHistory extends AppCompatActivity {
     }
 
     private void fetchCountsAndUpdateChart(PieChart pieChart) {
+        // Fetch counts from Firebase and update the PieChart and TextViews
         botChatRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 long botChatCount = dataSnapshot.getChildrenCount();
-                // Calculate percentage and add the botChatCount to the PieChart
-                double botChatPercentage = calculatePercentage(botChatCount);
-                pieChart.addPieSlice(new PieModel("Bot Chat Count", (float) botChatPercentage, getResources().getColor(R.color.red)));
 
-                // Update TextView
-                botChatPercentageTextView.setText("ChatBot: "+String.format("%.2f%%", botChatPercentage));
+                // Fetch openCount
+                openCountRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot openCountSnapshot) {
+                        if (openCountSnapshot.exists()) {
+                            long openCount = openCountSnapshot.getValue(Long.class);
+
+                            // Fetch newsHistoryCount
+                            newsHistoryRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot newsHistorySnapshot) {
+                                    long newsHistoryCount = newsHistorySnapshot.getChildrenCount();
+
+                                    // Calculate total count
+                                    double totalCount = botChatCount + openCount + newsHistoryCount;
+
+                                    // Calculate percentages
+                                    double botChatPercentage = calculatePercentage(botChatCount, totalCount);
+                                    double openCountPercentage = calculatePercentage(openCount, totalCount);
+                                    double newsHistoryPercentage = calculatePercentage(newsHistoryCount, totalCount);
+
+                                    // Add slices to PieChart
+                                    pieChart.addPieSlice(new PieModel("Bot Chat Count", (float) botChatPercentage, getResources().getColor(R.color.red)));
+                                    pieChart.addPieSlice(new PieModel("Open Count", (float) openCountPercentage, getResources().getColor(R.color.green)));
+                                    pieChart.addPieSlice(new PieModel("News History Count", (float) newsHistoryPercentage, getResources().getColor(R.color.bluesplash)));
+
+                                    // Update TextViews
+                                    botChatPercentageTextView.setText("ChatBot: " + String.format("%.2f%%", botChatPercentage));
+                                    openCountPercentageTextView.setText("News Feed: " + String.format("%.2f%%", openCountPercentage));
+                                    newsHistoryPercentageTextView.setText("Fake News Detection: " + String.format("%.2f%%", newsHistoryPercentage));
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    Toast.makeText(StatisticalHistory.this, "Failed to fetch news history count", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(StatisticalHistory.this, "Failed to fetch open count", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
@@ -84,50 +125,11 @@ public class StatisticalHistory extends AppCompatActivity {
                 Toast.makeText(StatisticalHistory.this, "Failed to fetch bot chat count", Toast.LENGTH_SHORT).show();
             }
         });
-
-        openCountRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    long openCount = dataSnapshot.getValue(Long.class);
-                    // Calculate percentage and add the openCount to the PieChart
-                    double openCountPercentage = calculatePercentage(openCount);
-                    pieChart.addPieSlice(new PieModel("Open Count", (float) openCountPercentage, getResources().getColor(R.color.green)));
-
-                    // Update TextView
-                    openCountPercentageTextView.setText("News Feed: "+String.format("%.2f%%", openCountPercentage));
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(StatisticalHistory.this, "Failed to fetch open count", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        newsHistoryRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                long newsHistoryCount = dataSnapshot.getChildrenCount();
-                // Calculate percentage and add the newsHistoryCount to the PieChart
-                double newsHistoryPercentage = calculatePercentage(newsHistoryCount);
-                pieChart.addPieSlice(new PieModel("News History Count", (float) newsHistoryPercentage, getResources().getColor(R.color.bluesplash)));
-
-                // Update TextView
-                newsHistoryPercentageTextView.setText("Fake News Detection: "+String.format("%.2f%%", newsHistoryPercentage));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(StatisticalHistory.this, "Failed to fetch news history count", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
-    private double calculatePercentage(long count) {
-        // Assuming the total count is 100 for percentage calculation
-        // You can adjust this value based on your requirements
-        double totalCount = 100.0;
-        return (count / totalCount) * 100.0;
+
+    private double calculatePercentage(long count, double totalCount) {
+            // Calculate percentage based on the actual totalCount
+            return (count / totalCount) * 100.0;
+        }
     }
-}
