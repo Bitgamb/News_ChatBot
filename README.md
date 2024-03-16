@@ -1,4 +1,4 @@
-
+[![newscb.png](https://i.postimg.cc/mkBG8RQL/newscb.png)](https://postimg.cc/phG7LwG4)
 # News ChatBot
 
 The "News Chatbot" project aims to address the growing concern of fake news in today's digital age. With the rapid dissemination of news articles through online platforms, it has become increasingly challenging for users to discern between reliable information and misinformation. This project seeks to empower users by providing them with a user-friendly application that can detect and flag potential fake news articles.
