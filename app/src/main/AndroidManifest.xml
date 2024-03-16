@@ -59,7 +59,9 @@
             android:theme="@style/NewsDisplay" />
         <activity
             android:name=".Chat"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/NewsDisplay"
+            />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -74,6 +76,7 @@
             android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
+            android:theme="@style/NewsDisplay"
             android:exported="false" />
         <activity
             android:name=".OTP"

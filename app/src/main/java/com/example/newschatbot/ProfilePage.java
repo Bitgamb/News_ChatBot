@@ -17,8 +17,11 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -34,7 +37,7 @@ public class ProfilePage extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase,keyDatabase;
     TextView titleName, titleUsername, profileName, profileEmail, profilePhone, profileMembership;
     MaterialButton profilePicButton, backButton, logout;
     ImageView  profileImg;
@@ -61,7 +64,9 @@ public class ProfilePage extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         logout = findViewById(R.id.logout);
 
+
         loadProfilePicture();
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

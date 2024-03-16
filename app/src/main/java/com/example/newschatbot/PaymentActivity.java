@@ -86,12 +86,12 @@ public class PaymentActivity extends Activity implements PaymentResultWithDataLi
 
         try {
             JSONObject options = new JSONObject();
-            options.put("name", "Razorpay Corp");
-            options.put("description", "Ad-Free Subscription Charges");
+            options.put("name", "News Chatbot");
+            options.put("description", "Ad-Free and Fake News Detection Subscription Charges");
             options.put("send_sms_hash",true);
             options.put("allow_rotation", true);
             //You can omit the image option to fetch the image from dashboard
-            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("image", "https://i.postimg.cc/prNpgy3V/newscb.png");
             options.put("currency", "INR");
             options.put("amount", "10000");
 

@@ -20,8 +20,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     OkHttpClient client = new OkHttpClient();
-    private DatabaseReference userChatRef;
+    private DatabaseReference userChatRef,keyDatabase;
     private FirebaseAuth firebaseAuth;
 
 
@@ -69,6 +72,25 @@ public class MainActivity extends AppCompatActivity {
             String userUid = currentUser.getUid();
             userChatRef = firebaseDatabase.getReference("users").child(userUid).child("bot_chat");
         }
+        // Retrieve API key from Firebase
+        keyDatabase = FirebaseDatabase.getInstance().getReference("openai_api");
+        keyDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String apiKey = snapshot.getValue(String.class);
+                    if (apiKey != null && !apiKey.isEmpty()) {
+                        // Assign the retrieved API key to the API variable
+                        API.API = apiKey;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle onCancelled event if needed
+            }
+        });
 
         //====================================
         message_text_text = findViewById(R.id.message_text_text);
