@@ -53,11 +53,25 @@ Editing Experience of more than 4 years on Adobe Premiere Pro and Adobe Photosho
 <img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/8a1e3fce-0fe3-4a75-ab85-6d26f4d5a452" width="25%" heigh="25%">
 <img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/b9c7b09b-8ce7-4bb2-b20b-643ccc6fcc41" width="25%" heigh="25%">
 <img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/60770772-35c8-4cac-9add-86b313d5be7d" width="25%" heigh="25%">
-<img src="(https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/ba939dfb-d55b-4247-b487-22281dbcef22" width="25%" heigh="25%">
-<img src="(https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/0b58c24e-0da7-4bf3-9562-1307fe10a9bb" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/ba939dfb-d55b-4247-b487-22281dbcef22" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/0b58c24e-0da7-4bf3-9562-1307fe10a9bb" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/f72faf81-fa82-47cd-a73a-76a271d73489" width="25%" heigh="25%">
+
+<h4>Chatbot</h4>
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/e6ef1d38-a149-4925-9b85-653018bf9e8b" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/6558f95c-a280-4deb-b5ea-f60ef5d05bad" width="25%" heigh="25%">
+<h4>Payment</h4>
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/5d648386-d460-4100-a697-2c36934d513f" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/c1b32f1c-2235-4532-bb0a-283437f10ea0" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/e74c35a6-4182-4739-b106-affc97a49692" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/b138c59a-789e-49b1-ab76-1aae26ba4f16" width="25%" heigh="25%">
+<h4>Profile</h4>
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/13437a38-8554-4cb5-b69c-84fc0b2bfccb" width="25%" heigh="25%">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/cd37b3aa-5163-475c-8a14-d12c84c53d9f" width="25%" heigh="25%">
+<h4>Stats</h4>
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/f8db8a83-cfe1-44cf-9321-516ce393ca1a" width="25%" heigh="25%">
 
 
 
 
-<img src="" width="25%" heigh="25%">
 
