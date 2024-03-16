@@ -37,7 +37,8 @@ Editing Experience of more than 4 years on Adobe Premiere Pro and Adobe Photosho
 - Live previews
 - Fullscreen mode
 
-
+## Documentation
+[![Documentation](https://camo.githubusercontent.com/68ea8dfbd317873bb12b167f8f83e63995d1104866026fc65119b2833e5686a7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7064662d4546333933393f7374796c653d666f722d7468652d6261646765266c6f676f3d61646f62656163726f626174726561646572266c6f676f436f6c6f723d776869746526636f6c6f723d626c61636b266c6162656c436f6c6f723d656331633234)](https://github.com/Bitgamb/News_ChatBot/blob/4dd5f031f88db497ffcda72542674ff93e523192/News_Chatbot_Documentation.pdf)
 
 ## Screenshots
 <h4>Login/Register</h4>
