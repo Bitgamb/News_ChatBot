@@ -1,4 +1,6 @@
-<img src="https://i.postimg.cc/Dypcc6TH/104263923-modified.png](https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/010b5019-d848-4834-aea6-bf9ffbf5f4be" width="100" height="100">
+<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/d88c9125-04ce-4a55-b751-09c8f8e5e4ba" width="100" height="100">
+
+
 
   # News ChatBot
 
