@@ -1,8 +1,11 @@
+
 <p align="center">
-<img src="https://github.com/Bitgamb/News_ChatBot_UI_Update/assets/104263923/d88c9125-04ce-4a55-b751-09c8f8e5e4ba" width="100" height="100">
+<img src="https://github.com/Bitgamb/News_ChatBot/assets/104263923/5f4f9bed-8768-4b80-b328-c32fb0be2a63" >
 </p>
 
+
   # News ChatBot
+
 
 The "News Chatbot" project aims to address the growing concern of fake news in today's digital age. With the rapid dissemination of news articles through online platforms, it has become increasingly challenging for users to discern between reliable information and misinformation. This project seeks to empower users by providing them with a user-friendly application that can detect and flag potential fake news articles.
 
